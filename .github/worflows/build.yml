@@ -20,9 +20,9 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
-              uses: actions/checkout@v2
+              uses: actions/checkout@v3
               with:
-                  persist-credentials: false
+                persist-credentials: false
 
             - name: Compile LaTeX document
               uses: xu-cheng/latex-action@v2
@@ -31,16 +31,16 @@ jobs:
 
             - name: Post Processing
               run: |
-                  mkdir build 
-                  cp *.pdf build/ 
-                  cp index.html build/
+                mkdir build 
+                cp *.pdf build/ 
+                cp index.html build/
                   
             - name: Git add
               run: git add resume.pdf
               
             - name: Deploy to GitHub Pages
-              uses: JamesIves/github-pages-deploy-action@4.1.4
+              uses: JamesIves/github-pages-deploy-action@v4
               with:
-                  BRANCH: gh-pages
-                  FOLDER: build
-                  CLEAN: true
+                  branch: gh-pages
+                  folder: build
+                  clean: true
