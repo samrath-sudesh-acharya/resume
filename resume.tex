@@ -1,8 +1,8 @@
 %-------------------------
 % Resume in Latex
-% Author : Harshibar
+% Author: Harshibar
 % Based off of: https://github.com/jakeryang/resume
-% License : MIT
+% License: MIT
 %------------------------
 
 \documentclass[letterpaper,11pt]{article}
@@ -21,15 +21,18 @@
 \usepackage{fontawesome}
 \usepackage{setspace}
 \usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{tikz}
+
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
     urlcolor=dark-grey,
     }
-% only for pdflatex
+% only for pdf latex
 % \input{glyphtounicode}
 
-% fontawesome
+% font awesome
 % \usepackage{fontawesome5}
 
 % fixed width
@@ -54,7 +57,7 @@
 }
 
 
-% custom font: helvetica-style
+% custom font: Helvetica-style
 \usepackage{tgheros}
 \renewcommand*\familydefault{\sfdefault} 
 %% Only if the base font of the document is to be sans serif
@@ -79,19 +82,20 @@
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
+\setlength{\footskip}{4.5pt}
 
 % Sections formatting - serif
 % \titleformat{\section}{
 %   \vspace{2pt} \scshape \raggedright\large % header section
 % }{}{0em}{}[\color{black} \titlerule \vspace{-5pt}]
 
-% TODO EBSERIES
+% TODO SERIES
 % sans serif sections
 \titleformat {\section}{
     \bfseries \vspace{2pt} \raggedright \large % header section
 }{}{0em}{}[\color{light-grey} {\titlerule[2pt]} \vspace{-4pt}]
 
-% only for pdflatex
+% only for pdf latex
 % Ensure that generate pdf is machine readable/ATS parsable
 % \pdfgentounicode=1
 
@@ -137,6 +141,15 @@
 
 \color{text-grey}
 
+% CTFline logo
+\newcommand{\myCtftime}{\tikz[y=1em, x=1em, baseline=1pt]{
+  \path[fill, even odd rule] (0,0) -- (1.05,0) -- (1.05,1) -- (0,1) -- cycle
+    (.15,.15) -- (.9,.15) -- (.9,.85) -- (.15,.85) -- cycle
+    (.15,.85) -- (.35,.85) -- (.7,.5) -- (.45,.25) -- (.35,.35) -- (.5,.5) -- cycle; 
+  }
+}
+\newcommand{\ctftime}[2]{\myCtftime}
+
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -152,6 +165,8 @@
     \hspace{1pt} \faGithub \hspace{2pt} \href{https://github.com/samrath-sudesh-acharya}{samrath-sudesh-acharya}
     \hspace{1pt} $|$
     \newline
+    \hspace{1pt} \faGlobe \hspace{2pt} \href{https://samrathsacharya.me/}{Blog Website} $|$
+    \hspace{1pt} \ctftime \hspace{2pt} \href{https://ctftime.org/user/169231}{CTFtime Profile} $|$
     \hspace{1pt} \faMapMarker \hspace{2pt}\texttt{Mangalore, India} 
     \\ \vspace{-3pt}
 \end{center}
@@ -168,7 +183,7 @@
 %       {Sharada P.U. College}{Apr 2018 - Mar 2020}
 %       {PCMC Stream | 92\%}{Mangalore, India}
 %     %   	\resumeItemListStart
-%     % 	\resumeItem {\textbf{Award}: Achieved \textbf{1st Position} in C++ coding competition among \textbf{15} college , held in \newline Pre-Unique,ST.Aloysius College,Mangalore}
+%     % 	\resumeItem {\textbf{Award}: Achieved \textbf{1st Position} in C++ coding competition among \textbf{15} college , held in \newline Pre-Unique,ST.Aloysius College, Mangalore}
 %     %     \resumeItemListEnd
     
 %     \resumeSubheading
@@ -181,9 +196,9 @@
 \section{SKILLS}
  \begin{itemize}[leftmargin=0in, label={}]
     \small{\item{
-     \textbf{Languages} {: Python, React, JavaScript, HTML, CSS, SQL (MySQL), Dart, Flutter, C, C++, Go}\vspace{2pt} \\
-     \textbf{Tools}     {: Figma, GitHub, BurpSuite, Metasploit, Postman, Docker, Linux, ElasticSearch, Kibana, Flare-VM, 
-     ExtraHop, InsightAppSec, Intezer Analyser, Photoshop, Illustrator}
+     \textbf{Languages} {: Python, JavaScript, HTML, CSS, SQL (MySQL), Dart, Flutter, C, C++}\vspace{2pt} \\
+     \textbf{Tools}     {: GitHub, BurpSuite, Metasploit, Postman, Docker, Linux, ElasticSearch, Kibana, Flare-VM, 
+     ExtraHop, InsightAppSec, Intezer Analyser}
     }}
  \end{itemize}
 
@@ -191,18 +206,23 @@
 \section{EXPERIENCE}
   \resumeSubHeadingListStart
 
+   \resumeSubheading
+      {Tracelay}{November. 2022 -- February. 2023}
+      {Cyber Security Analyst Trainee}{ India}
+     \resumeItemListStart
+      {Wrote reports on various APT attacks using industry-level tools like Trend Micro XDR, Sophos XDR, ExtraHop NDR, Intezer Cloud, Rapid 7 App sec}
+      \resumeItemListEnd
+  
+
     \resumeSubheading
       {Embrays Technologies}{December. 2021 -- January. 2022}
       {Intern as a Flutter Developer}{ India}
      \resumeItemListStart
-      {Developed a production-ready android app with GraphQl API Integration and Firebase which has \href{https://play.google.com/store/apps/details?id=com.easemytrades.stockdaddy&hl=en_IN&gl=US}{\textbf{\myuline {1L+ downloads}}}, providing seamless user experience and leveraging the power of GraphQL and Firebase.}
+      {Developed a production-ready Android app with GraphQl API Integration and Firebase which has \href{https://play.google.com/store/apps/details?id=com.easemytrades.stockdaddy&hl=en_IN&gl=US}{\textbf{\myuline {1L+ downloads}}}, providing seamless user experience and leveraging the power of GraphQL and Firebase.}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
       
-    % \resumeSubheading
-    %   {IEDC Club,DSCE}{Aug. 2021 -- Present}
-    %   {Graphic Designer (\href{https://www.instagram.com/samrath.s.acharya/}{\myuline {@samrath.s.acharya}})}{Bangalore, India}
-    %  \resumeItemListEnd
+    
      
 
 %-----------PROJECTS-----------
@@ -214,7 +234,7 @@
           {\textbf{Citibot
           (\href{https://github.com/samrath-sudesh-acharya/Citibot}{\myuline {GitHub}})}}{Sept. 2020 -- Nov. 2020}
           \resumeItemListStart
-            \resumeItem{A multilingual chatbot for CitiBank available through WhatsApp and Web, that provides accurate suggestions at a rapid rate, with an intuitive frontend and efficient data scraping and storage through the use of Elasticsearch.}
+            \resumeItem{A multilingual chatbot for CitiBank available through WhatsApp and Web, that provides accurate suggestions at a rapid rate, with an intuitive frontend and efficient data scraping and storage through Elasticsearch.}
             \resumeItem{Utilized technologies such as \textbf{Python}, \textbf{HTML}, \textbf{CSS}, \textbf{Javascript}, \textbf{FASTAPI}, \textbf{Elasticsearch}, \textbf{Kibana}, and \textbf{Docker} to create a feature-rich chatbot that delivers a seamless customer experience and make banking more convenient.}
           \resumeItemListEnd
           
@@ -227,17 +247,17 @@
           \resumeItemListEnd
           
      \resumeProjectHeading
-          {\textbf{Network Packet Sniffer (\href{https://github.com/samrath-sudesh-acharya/NETWORK-PACKET-SNIFFER}{\myuline {GitHub}})}}{Sept. 2020 -- Nov. 2020}
+          {\textbf{System Security Check (\href{https://github.com/samrath-sudesh-acharya/SystemSecuirtyCheck}{\myuline {GitHub}})}}{Sept. 2020 -- Nov. 2020}
           \resumeItemListStart
-            \resumeItem{A powerful network packet sniffer that can identify all interfaces in the operating system and capture various types of network requests such as ARP, TCP/IP, Payload, Mac addresses, and IPv6.}
-            \resumeItem{Utilized \textbf{Java} libraries \textbf{Jnetpcap} and \textbf{Swing} to create a feature-rich packet sniffer that provides deep visibility into network activity, making it a valuable tool for network administrators and security professionals..}
+            \resumeItem{A robust multi-layered cybersecurity strategy, uncovering vulnerabilities and potential attack vectors by scanning for Open Port, Viruses, MIME, and Windows Firewall Rules.}
+            \resumeItem{Utilized \textbf{Python} libraries \textbf{Socket} and \textbf{Pymongo} to create a feature-rich executable file that scans the system and stores in  \textbf{MongoDB} database, which can be viewed on the website.}
           \resumeItemListEnd  
           
     \resumeProjectHeading
-          {\textbf{Brain Tumor Segmentation (\href{https://github.com/samrath-sudesh-acharya/Brain-Tumor-Segementation}{\myuline {GitHub}})}}{Sept. 2020 -- Nov. 2020}
+          {\textbf{Pragati (\href{https://github.com/samrath-sudesh-acharya/Education-Chatbot-}{\myuline {GitHub}})}}{Sept. 2020 -- Nov. 2020}
           \resumeItemListStart
-            \resumeItem{Developed a high-performing convolutional neural network (CNN) using UNET, Resnet, VGG16, and VGG19 architectures to accurately segment brain tumors from Nifti images and classify them as LGG and HGG using an additional classification model.}
-            \resumeItem{Leveraged \textbf{Python} libraries \textbf{Tensor} and \textbf{Pytorch} to design and implement the CNN, achieving exceptional accuracy in brain tumor segmentation and classification.}
+            \resumeItem{A WhatsApp Chatbot to transform career guidance via an intelligent, personalized path to education and dream jobs with the help of a robust machine learning algorithm.}
+            \resumeItem{Leveraged \textbf{Python} libraries \textbf{Selenium}, \textbf{Matplotlib}, \textbf{Keras}, \textbf{NLTK} to understand user input for web scraping and providing data visualization with the help of \textbf{MongoDB} database and \textbf{FastAPI} RESTAPI deployed in \textbf{AWS}.}
           \resumeItemListEnd  
           
           
@@ -247,7 +267,8 @@
     % \resumeSubHeadingListStart
         \resumeItemListStart [noitemsep] %if you want all the points close
         % \resumeItemListStart
-            \resumeItem{Ranked \textbf{672} globally in \textbf{\href{https://app.hackthebox.com/profile/644617}{\myuline{Hack The Box}}}}
+            \resumeItem{Ranked \textbf{6} globally in \textbf{\href{https://ctftime.org/event/2042}{\myuline{DeconstruCT.F 23}}}}
+            \resumeItem{Ranked \textbf{24} out of 550 teams in TechGig Airtel Hackathon, EdTech category}
             \resumeItem{Ranked \textbf{top 10} winner across India in Citi Bank Innovation Hackathon 2022}
             \resumeItem{Ranked \textbf{top 6} winner in the intra college Hackman Hackathon 2022}
         \resumeItemListEnd
